@@ -1,7 +1,8 @@
 pipeline{
    agent any
-  environment{
-      PATH = "/opt/maven3/bin:$PATH"     
+  tools { 
+        maven 'Maven 3.9.4' 
+    }   
 }
 stages{
        stage("Gitclonefromscm"){
