@@ -1,9 +1,11 @@
 pipeline{
    agent any
-    export "M2_HOME=/opt/maven"
-    export "MAVEN_HOME=/opt/maven"
-    export "PATH=${M2_HOME}/bin:${PATH}"
-     stages{
+  environment{
+     M2_HOME=/opt/maven
+     MAVEN_HOME=/opt/maven
+     PATH="${M2_HOME}/bin:${PATH}"
+}
+stages{
        stage("Gitclonefromscm"){
            steps{
                git credentialsId: 'GITHUBCREDENTIALS', url: 'https://github.com/nageshanna/spring-boot-docker.git'
