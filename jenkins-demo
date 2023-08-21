@@ -1,9 +1,6 @@
 pipeline{
    agent any
-   environment {
-    PATH = "${M2_HOME}/bin:${PATH}"
-   }
-   stages{
+     stages{
        stage("Gitclonefromscm"){
            steps{
                git credentialsId: 'GITHUBCREDENTIALS', url: 'https://github.com/nageshanna/spring-boot-docker.git'
