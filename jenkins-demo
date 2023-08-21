@@ -1,0 +1,5 @@
+stage("Git clone"){
+            steps{
+                git credentialsId: 'GITHUBCREDENTIALS', url: 'https://github.com/nageshanna/spring-boot-docker.git'
+            }
+        }
