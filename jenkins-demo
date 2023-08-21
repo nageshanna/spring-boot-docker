@@ -1,9 +1,9 @@
 pipeline{
    agent any
-    stages{
+   stages{
        stage("Gitclonefromscm"){
-            steps{
-                git credentialsId: 'GITHUBCREDENTIALS', url: 'https://github.com/nageshanna/spring-boot-docker.git'
+           steps{
+               git credentialsId: 'GITHUBCREDENTIALS', url: 'https://github.com/nageshanna/spring-boot-docker.git'
             }
         }
 }
