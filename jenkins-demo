@@ -5,9 +5,8 @@ pipeline{
            steps{
                git credentialsId: 'GITHUBCREDENTIALS', url: 'https://github.com/nageshanna/spring-boot-docker.git'
             }
-        }
-     stage("SSH Into k8s Server") {
-         stpes{
+        stage("SSH Into k8s Server") {
+         steps{
          def remote = [:]
          remote.name = 'K8S master'
          remote.host = '34.70.216.187'
