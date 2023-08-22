@@ -1,18 +1,18 @@
 pipeline{
    agent any
-     tools { 
-        maven "default" 
-    }   
-stages{
+     stages{
        stage("Gitclonefromscm"){
            steps{
                git credentialsId: 'GITHUBCREDENTIALS', url: 'https://github.com/nageshanna/spring-boot-docker.git'
             }
         }
-        stage("Maven Build") {
-            steps{
-               sh "mvn -X clean package"
-            }
+     stage("SSH Into k8s Server") {
+         def remote = [:]
+         remote.name = 'K8S master'
+         remote.host = '34.70.216.187'
+         remote.user = 'root'
+         remote.password = 
+         remote.allowAnyHosts = true
+         }        
         }
-}
 }
